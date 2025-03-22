@@ -1,0 +1,65 @@
+/* Loader container */
+.loader {
+    @apply flex items-center justify-center w-fit h-fit;
+  }
+  
+  /* Truck wrapper */
+  .truckWrapper {
+    @apply w-52 h-24 flex flex-col relative items-center justify-end overflow-hidden;
+  }
+  
+  /* Truck body with suspension animation */
+  .truckBody {
+    @apply w-32 mb-1.5;
+    animation: truckMotion 1s linear infinite;
+  }
+  
+  /* Truck tires */
+  .truckTires {
+    @apply w-32 flex items-center justify-between px-3.5 absolute bottom-0;
+  }
+  .truckTires svg {
+    @apply w-6;
+  }
+  
+  /* Road */
+  .road {
+    @apply w-full h-0.5 bg-gray-800 relative bottom-0 rounded-lg;
+  }
+  .road::before {
+    @apply absolute w-5 h-full bg-gray-800 rounded-lg border-l-4 border-l-white right-[-50%];
+    animation: roadSlide 1.4s linear infinite;
+  }
+  .road::after {
+    @apply absolute w-2.5 h-full bg-gray-800 rounded-lg border-l-2 border-l-white right-[-65%];
+    animation: roadSlide 1.4s linear infinite;
+  }
+  
+  /* Lamp post */
+  .lampPost {
+    @apply absolute bottom-0 right-[-90%] h-20;
+    animation: roadSlide 1.4s linear infinite;
+  }
+  
+  /* Animations */
+  @keyframes truckMotion {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes roadSlide {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-350px);
+    }
+  }
+  
